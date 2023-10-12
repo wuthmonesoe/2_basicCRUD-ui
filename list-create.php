@@ -10,9 +10,10 @@
                     $name =$_POST["name"];
                     $money =$_POST["money"];
 
-                    $sql ="INSERT INTO my (name,money) VALUES ('$name',$money)" ;
+                 $sql ="INSERT INTO my (name,money) VALUES ('$name',$money)" ;
                    if(mysqli_query($conn,$sql)){
                      echo alert("Data Inserted");
+                    header("LOCATION:list-index.php");
                    } 
                 }     
                 ?>

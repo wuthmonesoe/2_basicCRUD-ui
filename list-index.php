@@ -25,8 +25,10 @@
                         <tr>
                             <th>No</th>
                             <th>Name</th>
-                            <th>Money</th>
+                            <th class="text-end">Money</th>
+                            <th class="text-center">Control</th>
                             <th>Create At</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -35,17 +37,23 @@
                         <tr class="align-middle">
                             <td><?= $row["id"]?></td>
                             <td><?= $row["name"]?></td>
-                            <td><?= $row["money"]?></td>
+                            <td class="text-end"><?= $row["money"]?></td>
+                            <td class="text-center">
+                                <a href="./list-update.php?id=<?=$row['id']?>;" class="btn btn-primary me-3">Update</a>
+                                <a onclick="return confirm('Are you Sure to Delete?')"
+                                    href="./list-delete.php?id=<?=$row['id']?>;" class=" btn btn-danger">Delete</a>
+                            </td>
                             <td>
                                 <p class="small mb-0">
                                     <i class="bi bi-calendar"></i>
                                     <?= showDateTime($row['created_at'])?>
                                 </p>
-                                <p class="small mb-0">
+                                <p class=" small mb-0">
                                     <i class="bi bi-clock"></i>
                                     <?= showDateTime($row['created_at'],"H : i : s")?>
                                 </p>
                             </td>
+
 
                         </tr>
                         <?php endwhile; ?>
@@ -53,9 +61,10 @@
                     <tfoot>
                         <tr>
                             <td colspan="2">Total Money : </td>
-                            <td colspan="2">
+                            <td class="text-end">
                                 <?=mysqli_fetch_assoc($totalQuery)['total']; ?>
                             </td>
+                            <td colspan="2"></td>
                         </tr>
                     </tfoot>
                 </table>
