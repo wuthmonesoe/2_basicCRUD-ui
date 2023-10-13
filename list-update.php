@@ -5,12 +5,14 @@
         <div class="col-12 col-lg-6">
             <div class="border rounded p-5 m-5">
                 <h3>Update List</h3>
+                <!-- data ဆွဲထုတ် -->
                 <?php
                 $id =$_GET["id"];
                 $sql= "SELECT * FROM my WHERE id= $id";
                 $query= mysqli_query($conn,$sql);
                 $row = mysqli_fetch_assoc($query); 
                 ?>
+                <!-- ဆွဲထုတ်ထားတဲ့dataကိုformထဲ ြပန်ထည့်ပေး -->
                 <form action="./list-update-info.php" method="post">
                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
                     <div class="mb-3">
