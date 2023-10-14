@@ -4,6 +4,12 @@
     <div class="row">
         <div class="col-12 col-lg-12">
             <div class="border rounded p-5 m-5">
+                <?php
+                if(!empty($_SESSION['status'])){
+                    echo alert($_SESSION["status"]["message"]);
+                    $_SESSION["status"] =null;
+                }
+                ?>
                 <h3>Payment List</h3>
                 <?php
 

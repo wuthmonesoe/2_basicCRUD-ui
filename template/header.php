@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "core/connection.php";
 require_once "core/functions.php";
 ?>
